@@ -5,8 +5,62 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="resources/favicon.png">
 </head>
+
 <body>
-  <h1>Hallå världen!</h1>
-  <p>Det här är min första webbsida via GitHub Pages. Tack Greger!</p>
+
+ <div class="header-row">
+  <div class="header-text">
+    <h1 class="flyttad-header">Welcome to my website! Check in my photos!</h1>
+    <div class="om-mig-row">
+      <div class="om-mig-text">
+        <h2>About me</h2>
+        <p>
+          I'm Elias and I come from the deep forests of Västerbotten in Sweden. Right now I live in Kiruna studying at Rymdgymnasiet. I love photographing nature, landscapes and space. Here you can see my photo gallery and order prints! Welcome!
+        </p>
+        <a href="about.html" class="read-more-link">Read more</a>
+      </div>
+      <img src="resources/photos/om-mig.jpg" class="om-mig-bild" style="width:400px;">
+    </div>
+  </div>
+  <a href="headerimage.html">
+    <img src="resources/photos/headerimage.jpg" class="startbildhöger" style="width:800px;">
+  </a>
+</div>
+
+</body>
+
+<section class="vinklad-sektion">
+  <div class="vinklad-innehall">
+    <h2>Mitt nya parti</h2>
+    <p>Här kan du skriva vad du vill, t.ex. visa fler bilder, info eller något annat!</p>
+    <div id="galleri"></div>
+  </div>
+</section>
+
+<script>
+  // Lista med dina bilder och länkar
+  const bilder = [
+    { src: "resources/photos/gallery/bild1.jpg", länk: "bild1.html" },
+    { src: "resources/photos/gallery/bild2.jpg", länk: "bild2.html" },
+    { src: "resources/photos/gallery/bild3.jpg", länk: "bild3.html" }
+    // Lägg till fler bilder här!
+  ];
+
+  // Slumpa ordningen om du vill:
+  bilder.sort(() => Math.random() - 0.5);
+
+  // Skapa HTML för varje bild
+  const galleriDiv = document.getElementById("galleri");
+  bilder.forEach(bild => {
+    const a = document.createElement("a");
+    a.href = bild.länk;
+    const img = document.createElement("img");
+    img.src = bild.src;
+    img.className = "galleri-bild";
+    img.alt = "Galleri-bild";
+    a.appendChild(img);
+    galleriDiv.appendChild(a);
+  });
+</script>
 </body>
 </html>

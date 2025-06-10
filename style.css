@@ -1,14 +1,130 @@
 body {
-  background-color: rgba(230, 230, 230, 0.921);
+  background-color: rgba(202, 107, 215, 0.815);
   font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  color: #202020;
+  color: #ffffff;
   text-align: center;
+  font-size: 70px;      /* Justera storlek efter behov */
 }
 
+h2 {
+  color: #ffcaf5;
+  text-align: left;
+  font-size: 35px;      /* Justera storlek efter behov */
+}
+
+.flyttad-header {
+  margin: 0 0 20px 0;          /* Lite extra nedåt-marginal om du vill */
+  text-align: left;
+}
+
+
 p {
-  color: #555;
+  color: #ffd6f4;
+  font-size: 25px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.startbildhöger {
+  width: 200px;        /* Justera storlek efter behov */
+  border-radius: 30px;  /* Valfritt: rundade hörn */
+}
+
+.header-row {
+  display: flex;
+  align-items: flex-start; /* Gör så att text och bild hamnar på samma höjd */
+  gap: 40px;           /* Avstånd mellan text och bild */
+  margin-top: 60px;    /* Flyttar ned hela raden om du vill */
+  margin-left: 40px;   /* Flyttar raden åt höger om du vill */
+  margin-right: 40px;  /* Flyttar raden åt vänster om du vill */
+}
+
+.om-mig-row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin: 160px 80px 0 0px;
+}
+
+.om-mig-text {
+  max-width: 400px;
+  margin-bottom: 0;
+}
+
+.om-mig-bild {
+  width: 220px;
+  border-radius: 30px;
+}
+
+.vinklad-sektion {
+  position: relative;
+  background: #2a0030;
+  margin-top: 0px;
+  padding: 80px 0 60px 0;
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+  /* Justera 8% och 92% för mer eller mindre vinkel */
+  z-index: 1;
+}
+
+.vinklad-sektion::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: inherit;
+  transform: skewY(-12deg); /* Ändra värdet för mer eller mindre vinkel */
+  z-index: 1;
+}
+
+.vinklad-innehall {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+.read-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #a04fcf;
+  text-decoration: underline;
   font-size: 18px;
+  cursor: pointer;
+}
+.read-more-link:hover {
+  color: #6d2b9a;
+  font-size: 20px;
+}
+
+#galleri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.galleri-bild {
+  width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0002;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.galleri-bild:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
