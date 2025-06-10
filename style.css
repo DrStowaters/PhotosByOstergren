@@ -1,0 +1,14 @@
+body {
+  background-color: rgba(230, 230, 230, 0.921);
+  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+}
+
+h1 {
+  color: #202020;
+  text-align: center;
+}
+
+p {
+  color: #555;
+  font-size: 18px;
+}
